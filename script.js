@@ -1,16 +1,25 @@
-import { Personaje } from "./Personaje";
-import { GemasDelInfinito } from "./GemasDelInfinito";
+import { Personaje } from "./Personaje.js";
+import { GemaAlma } from "./GemaAlma.js";
+import { GemaEspacio } from "./GemaEspacio.js";
+import { GemaRealidad } from "./GemaRealidad.js";
+import { GemaMente } from "./GemaMente.js";
+import { GemaPoder } from "./GemaPoder.js";
+import { GemaTiempo } from "./GemaTiempo.js";
 
-const personaje = new Personaje('Roberto');
+const personajes = [new Personaje('Roberto')];
 const gemas = [];
 
-gemas.push(new GemasDelInfinito('Alma'));
-gemas.push(new GemasDelInfinito('Espacio'));
-gemas.push(new GemasDelInfinito('Mente'));
-gemas.push(new GemasDelInfinito('Poder'));
-gemas.push(new GemasDelInfinito('Realidad'));
-gemas.push(new GemasDelInfinito('Tiempo'));
+gemas.push(new GemaAlma());
+gemas.push(new GemaEspacio());
+gemas.push(new GemaRealidad());
+gemas.push(new GemaMente());
+gemas.push(new GemaPoder());
+gemas.push(new GemaTiempo());
 
-gemas.forEach(gema => {
-    personaje.usarGema(gema);
+personajes.forEach(personaje => {
+    gemas.forEach(gema => {
+        personaje.usarGema(gema);
+        console.log('-------------------');
+    });
+    console.log("Ahora que ya usé todas las gemas, me voy a dormir");
 });
